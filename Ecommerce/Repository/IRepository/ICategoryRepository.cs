@@ -5,7 +5,7 @@ namespace Ecommerce.Repository.IRepository
     public interface ICategoryRepository
     {
         ICollection<Category> GetCategories();
-        Category GetCategory(int categoryId);
+        Category? GetCategory(int categoryId);
         bool CategoryExists(int categoryId);
         bool CategoryExists(string name);
         bool CreateCategory(Category category);

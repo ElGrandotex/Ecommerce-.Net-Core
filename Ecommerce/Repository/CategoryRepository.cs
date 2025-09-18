@@ -40,10 +40,9 @@ namespace Ecommerce.Repository
             return _db.Categories.OrderBy(c => c.Name).ToList();
         }
 
-        public Category GetCategory(int categoryId)
+        public Category? GetCategory(int categoryId)
         {
-            return _db.Categories.FirstOrDefault(c => c.ID == categoryId) ?? 
-                throw new InvalidOperationException($"La categoria {categoryId} no existe");
+            return _db.Categories.FirstOrDefault(c => c.ID == categoryId);
         }
 
         public bool Save()
